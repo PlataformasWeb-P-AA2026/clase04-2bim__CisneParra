@@ -86,6 +86,14 @@ def eliminar_estudiante(request, id):
     return redirect(index)
 
 
+def listar_telefonos(request):
+    """
+    """
+    telefonos = NumeroTelefonico.objects.all()
+    informacion_template = {'telefonos': telefonos, 'numero_telefonos': len(telefonos)}
+    return render(request, 'listadoTelefonos.html', informacion_template)
+
+
 def crear_numero_telefonico(request):
     """
     """
