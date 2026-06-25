@@ -12,6 +12,7 @@
     <tr>
       <th>Teléfono</th>
       <th>Tipo</th>
+      <th>Operadora</th>
       <th>Estudiante</th>
       <th>Editar</th>
     </tr>
@@ -20,6 +21,7 @@
   <tr>
     <td>{{ t.telefono }}</td>
     <td>{{ t.tipo }}</td>
+    <td>{{ t.obtener_operadora }}</td>
     <td>{{ t.estudiante }}</td>
     <td><a href="{% url 'editar_numero_telefonico' t.id %}">editar</a></td>
   </tr>
