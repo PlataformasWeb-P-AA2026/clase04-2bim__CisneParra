@@ -62,6 +62,12 @@ class NumeroTelefonicoEstudianteForm(ModelForm):
         self.fields["estudiante"].widget = forms.widgets.HiddenInput()
         print(estudiante)
 
+    def clean_telefono(self):
+        valor = self.cleaned_data['telefono']
+        if not (valor.startswith('098') or valor.startswith('099')):
+            raise forms.ValidationError("El número debe iniciar con 098 o 099")
+        return valor
+
     class Meta:
         model = NumeroTelefonico
         fields = ['telefono', 'tipo', 'estudiante']
